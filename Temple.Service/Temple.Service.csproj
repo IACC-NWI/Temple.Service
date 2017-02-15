@@ -177,6 +177,10 @@
     <Compile Include="Migrations\201702140230497_initialCreate.Designer.cs">
       <DependentUpon>201702140230497_initialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702150310308_suggestedDonation.cs" />
+    <Compile Include="Migrations\201702150310308_suggestedDonation.Designer.cs">
+      <DependentUpon>201702150310308_suggestedDonation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\FestivalModel.cs" />
     <Compile Include="Models\OfferedServiceModel.cs" />
@@ -197,6 +201,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201702140230497_initialCreate.resx">
       <DependentUpon>201702140230497_initialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702150310308_suggestedDonation.resx">
+      <DependentUpon>201702150310308_suggestedDonation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

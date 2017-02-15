@@ -19,5 +19,7 @@ namespace Temple.Service.Database.Model
         public Guid? FestivalId { get; set; }
         [MaxLength(50)]
         public string FestivalName { get; set; }
+
+        public decimal SuggestedDonation { get; set; }
     }
 }

@@ -19,5 +19,6 @@ namespace Temple.Service.Models
         public Guid? FestivalId { get; set; }
         [StringLength(50)]
         public string FestivalName { get; set; }
+        public decimal SuggestedDonation { get; set; }
     }
 }

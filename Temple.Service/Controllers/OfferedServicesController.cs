@@ -79,7 +79,8 @@ namespace Temple.Service.Controllers
                 Description = model.Description,
                 Name = model.Name,
                 FestivalName = model.FestivalName,
-                ServiceId = model.ServiceId
+                ServiceId = model.ServiceId,
+                SuggestedDonation = model.SuggestedDonation
             });
             await _dbContext.SaveChangesAsync();
             return Ok(model);
@@ -99,6 +100,7 @@ namespace Temple.Service.Controllers
             service.Description = model.Description;
             service.FestivalName = model.FestivalName;
             service.Name = model.Name;
+            service.SuggestedDonation = model.SuggestedDonation;
             await _dbContext.SaveChangesAsync();
 
             return Ok(model);
@@ -115,7 +117,8 @@ namespace Temple.Service.Controllers
                 ServiceId = t.ServiceId,
                 Name = t.Name,
                 Description = t.Description,
-                FestivalName = t.FestivalName
+                FestivalName = t.FestivalName,
+                SuggestedDonation = t.SuggestedDonation
             }).ToList());
         }
     }
