@@ -20,5 +20,6 @@ namespace Temple.Service.Database
 
         public DbSet<Festival> Festivals { get; set; }
         public DbSet<OfferedService> OfferedServices { get; set; }
+        public DbSet<Purchase> Purchases { get; set; }
     }
 }

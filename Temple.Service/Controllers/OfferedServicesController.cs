@@ -121,5 +121,65 @@ namespace Temple.Service.Controllers
                 SuggestedDonation = t.SuggestedDonation
             }).ToList());
         }
+
+        [HttpPost]
+        [Route("purchaseoffering")]
+        public async Task<IHttpActionResult> PurchaseOffering(PurchaseOfferingModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            var state = model.State.ToUpper();
+            _dbContext.Purchases.Add(new Purchase
+            {
+                FestivalId = model.FestivalId,
+                SuggestedDonation = model.SuggestedDonation,
+                FestivalName = model.FestivalName,
+                ActualDonation = model.ActualDonation,
+                AddressLine1 = model.AddressLine1,
+                AddressLine2 = model.AddressLine2,
+                City = model.City,
+                Email = model.Email,
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                MemberId = model.MemberId,
+                OfferedServiceId = model.OfferedServiceId,
+                OfferedServiceName = model.OfferedServiceName,
+                PurchaseId = model.PurchaseId,
+                ServiceDate = model.ServiceDate,
+                State = state,
+                Zip = model.Zip
+            });
+            await _dbContext.SaveChangesAsync().ConfigureAwait(false);
+            return Ok(model);
+        }
+
+        [HttpGet]
+        [Route("getallpurchases")]
+        public async Task<IHttpActionResult> GetAllOfferingPurchases()
+        {
+            var purchases = await _dbContext.Purchases.ToListAsync();
+            return Ok(purchases.Select(t => new PurchaseOfferingModel
+            {
+                FestivalId = t.FestivalId,
+                SuggestedDonation = t.SuggestedDonation,
+                FestivalName = t.FestivalName,
+                AddressLine2 = t.AddressLine2,
+                State = t.State,
+                MemberId = t.MemberId,
+                ActualDonation = t.ActualDonation,
+                PurchaseId = t.PurchaseId,
+                ServiceDate = t.ServiceDate,
+                OfferedServiceId = t.OfferedServiceId,
+                FirstName = t.FirstName,
+                LastName = t.LastName,
+                City = t.City,
+                Email = t.Email,
+                OfferedServiceName = t.OfferedServiceName,
+                AddressLine1 = t.AddressLine1,
+                Zip = t.Zip
+            }).ToList());
+        }
     }
 }

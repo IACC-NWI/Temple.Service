@@ -12,6 +12,7 @@ namespace Temple.Service.Database
     {
         DbSet<Festival> Festivals { get; set; }
         DbSet<OfferedService> OfferedServices { get; set; }
+        DbSet<Purchase> Purchases { get; set; }
         Task<int> SaveChangesAsync();
     }
 }
