@@ -9,7 +9,7 @@ namespace Temple.Service.Models
     public class PurchaseOfferingModel
     {
         public Guid PurchaseId { get; set; }
-        public Guid MemberId { get; set; }
+        public Guid? MemberId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }

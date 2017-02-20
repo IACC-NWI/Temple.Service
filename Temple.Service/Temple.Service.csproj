@@ -168,7 +168,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\OfferedServicesController.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
     <Compile Include="Database\ITempleDbContext.cs" />
+    <Compile Include="Database\Model\Donor.cs" />
     <Compile Include="Database\Model\Festival.cs" />
     <Compile Include="Database\Model\OfferedService.cs" />
     <Compile Include="Database\Model\Purchase.cs" />
@@ -186,9 +188,15 @@
     <Compile Include="Migrations\201702160343415_purchase.Designer.cs">
       <DependentUpon>201702160343415_purchase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702182352058_Donors.cs" />
+    <Compile Include="Migrations\201702182352058_Donors.Designer.cs">
+      <DependentUpon>201702182352058_Donors.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\DonorModel.cs" />
     <Compile Include="Models\FestivalModel.cs" />
     <Compile Include="Models\OfferedServiceModel.cs" />
+    <Compile Include="Models\PerformedServiceReportModel.cs" />
     <Compile Include="Models\PurchaseOfferingModel.cs" />
     <Compile Include="OwinStartup.cs" />
     <Compile Include="Program.cs" />
@@ -213,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702160343415_purchase.resx">
       <DependentUpon>201702160343415_purchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702182352058_Donors.resx">
+      <DependentUpon>201702182352058_Donors.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

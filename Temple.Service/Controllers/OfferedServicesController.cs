@@ -131,9 +131,28 @@ namespace Temple.Service.Controllers
                 return BadRequest(ModelState);
             }
             var state = model.State.ToUpper();
+            var fName = model.FirstName.Trim();
+            var lName = model.LastName.Trim();
+            var donorId = Guid.NewGuid();
+            var donor = _dbContext.Donors.FirstOrDefault(t => t.FirstName == fName && t.LastName == lName);
+            if (donor == null)
+            {
+                _dbContext.Donors.Add(new Donor
+                {
+                    Email = model.Email,
+                    FirstName = fName,
+                    LastName = lName,
+                    DonorId = donorId
+                });
+            }
+            else
+            {
+                donorId = donor.DonorId;
+            }
             _dbContext.Purchases.Add(new Purchase
             {
                 FestivalId = model.FestivalId,
+                DonorId =  donorId,
                 SuggestedDonation = model.SuggestedDonation,
                 FestivalName = model.FestivalName,
                 ActualDonation = model.ActualDonation,
@@ -181,5 +200,7 @@ namespace Temple.Service.Controllers
                 Zip = t.Zip
             }).ToList());
         }
+
+        
     }
 }

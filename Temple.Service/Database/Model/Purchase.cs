@@ -12,7 +12,8 @@ namespace Temple.Service.Database.Model
     {
         [Key]
         public Guid PurchaseId { get; set; }
-        public Guid MemberId { get; set; }
+        public Guid DonorId { get; set; }
+        public Guid? MemberId { get; set; }
         [MaxLength(100)]
         public string FirstName { get; set; }
         [MaxLength(100)]

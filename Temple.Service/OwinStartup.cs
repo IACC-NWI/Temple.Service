@@ -52,7 +52,8 @@ namespace Temple.Service
             app.UseIdentityServerBearerTokenAuthentication(new IdentityServerBearerTokenAuthenticationOptions
             {
                 Authority = ConfigurationManager.AppSettings["IdentityUrl"],
-                RequiredScopes = scopes
+                RequiredScopes = scopes,
+                
             });
 
 
