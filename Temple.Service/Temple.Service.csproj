@@ -192,6 +192,10 @@
     <Compile Include="Migrations\201702182352058_Donors.Designer.cs">
       <DependentUpon>201702182352058_Donors.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702210232454_UpdatedDescriptionLength.cs" />
+    <Compile Include="Migrations\201702210232454_UpdatedDescriptionLength.Designer.cs">
+      <DependentUpon>201702210232454_UpdatedDescriptionLength.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DonorModel.cs" />
     <Compile Include="Models\FestivalModel.cs" />
@@ -224,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702182352058_Donors.resx">
       <DependentUpon>201702182352058_Donors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702210232454_UpdatedDescriptionLength.resx">
+      <DependentUpon>201702210232454_UpdatedDescriptionLength.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

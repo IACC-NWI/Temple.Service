@@ -13,7 +13,7 @@ namespace Temple.Service.Models
         public Guid FestivalId { get; set; }
         [StringLength(50), Required]
         public string Name { get; set; }
-        [StringLength(500)]
+        [StringLength(4000)]
         public string Description { get; set; }
     }
 }

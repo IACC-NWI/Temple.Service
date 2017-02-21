@@ -12,7 +12,7 @@ namespace Temple.Service.Database.Model
         public Guid FestivalId { get; set; }
         [MaxLength(50)]
         public string Name { get; set; }
-        [MaxLength(500)]
+        [MaxLength(4000)]
         public string Description { get; set; }
     }
 }
